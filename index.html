@@ -52,71 +52,71 @@
                 {
                     title: 'Table Tops',
                     items: ['Patterned or Decorative Glass', 'Tinted or Colored Glass', 'Back-Painted Glass'],
-                    image: 'https://picsum.photos/seed/glasstop/800/600'
+                    image: 'images/table-top.jpg'
                 }
             ],
             mirror: [
                 {
                     title: 'Frameless & Beveled Mirror',
                     items: ['Sleek and Modern Aesthetic', 'Enhanced Depth and Dimension', 'Timeless Elegance'],
-                    image: 'https://picsum.photos/seed/mirror1/800/600'
+                    image: 'images/frameless_mirror.jpg'
                 },
                 {
                     title: 'LED Light Mirror',
                     items: ['Efficient Illumination', 'Modern Design and Energy Efficiency', 'Customizable Lighting Options'],
-                    image: 'https://picsum.photos/seed/mirror2/800/600'
+                    image: 'images/led_light_mirror.jpg'
                 },
                 {
                     title: 'Framed Mirror',
                     items: ['Style and Elegance', 'Enhanced Visual Impact', 'Functional Versatility'],
-                    image: 'https://picsum.photos/seed/mirror3/800/600'
+                    image: 'images/framed_mirror.jpg'
                 },
                 {
                     title: 'Designed Mirror',
                     items: ['Aesthetic Appeal', 'Versatile Design', 'Reflective Functionality'],
-                    image: 'https://picsum.photos/seed/mirror4/800/600'
+                    image: 'images/Designed_Mirror.jpg'
                 },
                 {
                     title: 'Color Mirror',
                     items: ['Mood Enhancement', 'Visual Impact and Decorative Element', 'Versatile Lighting Options'],
-                    image: 'https://picsum.photos/seed/mirror5/800/600'
+                    image: 'images/colored_mirror.jpg'
                 },
                 {
                     title: 'Antique Mirror',
                     items: ['Different Pattern & Colors', 'Modern yet Vintage Shades'],
-                    image: 'https://picsum.photos/seed/mirror6/800/600'
+                    image: 'images/Antique-Mirror.jpg'
                 }
             ],
             aluminium: [
                 {
                     title: 'Aluminium Sliding Windows & Doors',
                     items: ['Fixed Skylights', 'Ventilating Skylights', 'Dome Skylights'],
-                    image: 'https://picsum.photos/seed/alum1/800/600'
+                    image: 'images/AluminiumSlidingWindows.jpg'
                 },
                 {
                     title: 'Bi-Fold Doors',
                     items: ['Enhanced Flexibility and Functionality', 'Space-Saving Design', 'Easy Accessibility'],
-                    image: 'https://picsum.photos/seed/alum2/800/600'
+                    image: 'images/bi-folding-doors.jpg'
                 },
                 {
                     title: 'Curtain Wall',
                     items: ['Architectural Versatility', 'Customization and Design', 'Flexibility Enhanced Interior Comfort and Daylighting'],
-                    image: 'https://picsum.photos/seed/alum3/800/600'
+                    image: 'images/curtain-wall.jpg'
                 },
                 {
                     title: 'Telescopic Doors',
                     items: ['Sleek Aesthetic and Modern Appeal', 'Space Optimization', 'Versatile Configurations'],
-                    image: 'https://picsum.photos/seed/alum4/800/600'
+                    image: 'images/telescop-door.jpg'
                 },
                 {
                     title: 'Flynet Mesh',
                     items: ['Insect Protection', 'Unobstructed Views and Natural Light', 'Child and Pet Safety'],
-                    image: 'https://picsum.photos/seed/alum5/800/600'
+                    image: 'images/mesh-screen.jpg'
                 },
                 {
                     title: 'Aluminium Office/Kitchen Cabinets',
                     items: ['Architectural Statement', 'Functional Advantages', 'Enhanced Accessibility'],
-                    image: 'https://picsum.photos/seed/alum6/800/600'
+                    image: 'images/aluminium_kitchen_cabinet.jpg'
                 }
             ]
         };
@@ -164,7 +164,7 @@
             return (
                 <section id="home" className="hero">
                     <div className="container hero-content animate-in">
-                        <span className="hero-subtitle">2024-2025 Company Profile</span>
+                        <span className="hero-subtitle">2024-2026 Company Profile</span>
                         <h1 className="hero-title">Reflecting Quality, <br /><span className="text-gold">Shaping Durability.</span></h1>
                         <p className="hero-description">We specialize in premium glass and aluminium installation and maintenance in Dubai, catering to the expanding renovation and construction sector.</p>
                         <div>
@@ -182,27 +182,34 @@
                     <div className="container">
                         <div className="about-grid">
                             <div className="ceo-image-wrapper">
-                                <img src="ceo-profile.jpg" alt="CEO Profile" className="ceo-image" />
+                                <img src="images/logo_ceo.jpg" alt="CEO Profile" className="ceo-image" />
                             </div>
                             <div className="about-content">
-                                <h2>Get To Know Us</h2>
-                                <h3 className="text-gold" style={{ marginBottom: '1rem', fontFamily: 'var(--font-heading)' }}>Profile of CEO</h3>
-                                <p>With over 10 years in the Glass & Aluminium market, CEO Mr. Hasan Javed has become a trusted industry leader, known for innovative strategies and driving business growth.</p>
+                                <h2 className="animate-in">Get To Know Us</h2>
 
-                                <h3 className="text-gold" style={{ marginBottom: '1rem', marginTop: '2rem', fontFamily: 'var(--font-heading)' }}>About Our Company</h3>
-                                <p>Hasan Javed Glass & Aluminium Installation LLC Dubai, a premier provider of high-quality glass and aluminum solutions, is dedicated to transforming spaces with innovative design and exceptional craftsmanship.</p>
-                                <p>We prioritize high-quality standards in glass and mirror works, ensuring a perfect balance of beauty and reliability for our clients. Our core values revolve around innovation, quality and client satisfaction, delivering products that combine functionality, aesthetics, and durability.</p>
+                                <div className="profile-card animate-in" style={{ animationDelay: '0.2s' }}>
+                                    <h3 className="text-gold" style={{ marginBottom: '0.5rem', fontFamily: 'var(--font-heading)', fontSize: '1.8rem' }}>Profile of CEO</h3>
+                                    <p style={{ marginBottom: '0' }}>With over 10 years in the Glass & Aluminium market, CEO Mr. Hasan Javed has become a trusted industry leader, known for innovative strategies and driving business growth.</p>
+                                </div>
+
+                                <div className="company-info animate-in" style={{ animationDelay: '0.4s' }}>
+                                    <h3 className="text-gold" style={{ marginBottom: '1rem', fontFamily: 'var(--font-heading)', fontSize: '1.8rem' }}>About Our Company</h3>
+                                    <p>Hasan Javed Glass & Aluminium Installation LLC Dubai, a premier provider of high-quality glass and aluminum solutions, is dedicated to transforming spaces with innovative design and exceptional craftsmanship.</p>
+                                    <p>We prioritize high-quality standards in glass and mirror works, ensuring a perfect balance of beauty and reliability for our clients. Our core values revolve around innovation, quality and client satisfaction.</p>
+                                </div>
                             </div>
                         </div>
 
                         <div className="vision-mission">
-                            <div className="vm-box">
-                                <h3><i className="fa-solid fa-eye"></i> Our Vision</h3>
+                            <div className="vm-box animate-in" style={{ animationDelay: '0.6s' }}>
+                                <i className="fa-solid fa-eye text-gold"></i>
+                                <h3>Our Vision</h3>
                                 <p style={{ color: 'var(--text-muted)' }}>Our vision is to be the leading provider of innovative glass and aluminium solutions throughout the UAE, recognized for our excellence in quality, sustainability, and design.</p>
                             </div>
-                            <div className="vm-box">
-                                <h3><i className="fa-solid fa-bullseye"></i> Our Mission</h3>
-                                <p style={{ color: 'var(--text-muted)' }}>Our mission is to deliver exceptional glass and aluminium solutions. We are dedicated to providing superior services through innovative design, precise engineering, and outstanding customer service. Our commitment is quality and sustainability.</p>
+                            <div className="vm-box animate-in" style={{ animationDelay: '0.8s' }}>
+                                <i className="fa-solid fa-bullseye text-gold"></i>
+                                <h3>Our Mission</h3>
+                                <p style={{ color: 'var(--text-muted)' }}>Our mission is to deliver exceptional glass and aluminium solutions. We are dedicated to providing superior services through innovative design, precise engineering, and outstanding customer service.</p>
                             </div>
                         </div>
                     </div>
@@ -295,7 +302,7 @@
                         </div>
                         <div className="copyright">
                             <p>We ARE PROUD TO OFFER: Expertise, Versatility, Customization, Quality Materials, Efficiency, Client Satisfaction.</p>
-                            <p style={{ marginTop: '1rem' }}>&copy; 2024-2025 Hasan Javed Glass & Aluminium Installation LLC. All Rights Reserved.</p>
+                            <p style={{ marginTop: '1rem' }}>&copy; 2024-2026 Hasan Javed Glass & Aluminium Installation LLC. All Rights Reserved.</p>
                         </div>
                     </div>
                 </footer>

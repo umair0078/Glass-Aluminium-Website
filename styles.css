@@ -118,19 +118,19 @@ img {
 .reveal-left {
     opacity: 0;
     visibility: hidden;
-    transition: all 1s cubic-bezier(0.23, 1, 0.32, 1);
+    transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
 }
 
 .reveal {
-    transform: translateY(50px);
+    transform: translateY(30px);
 }
 
 .reveal-scale {
-    transform: scale(0.92);
+    transform: scale(0.95);
 }
 
 .reveal-left {
-    transform: translateX(-50px);
+    transform: translateX(-30px);
 }
 
 .reveal.active,

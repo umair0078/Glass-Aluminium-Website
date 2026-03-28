@@ -326,8 +326,8 @@
         function App() {
             useEffect(() => {
                 const observerOptions = {
-                    threshold: 0.15,
-                    rootMargin: "0px 0px -50px 0px"
+                    threshold: 0.05, // Lower threshold triggers animation sooner
+                    rootMargin: "0px 0px -10% 0px" // Triggers when 10% from the bottom of viewport
                 };
 
                 const observer = new IntersectionObserver((entries) => {

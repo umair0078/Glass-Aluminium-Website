@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hasan Javed Glass & Aluminium Installation LLC</title>
+    <!-- React & ReactDOM CDN -->
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <!-- Babel for JSX -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Local Stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+        const { useState, useEffect } = React;
+
+        const servicesData = {
+            glass: [
+                {
+                    title: 'Office Glass Partitions',
+                    items: ['Sliding Glass Partitions', 'Decorative Glass Partitions', 'Integrated Glass Partitions'],
+                    image: 'images/glass_office.png'
+                },
+                {
+                    title: 'Smart Film Glass',
+                    items: ['Switchable Privacy Glass (PDLC)', 'Privacy Smart Glass Film'],
+                    image: 'images/smart_film.png'
+                },
+                {
+                    title: 'Slim Profile Glass Partition',
+                    items: ['Acoustic Slim-Profile Glass Partitions', 'Slim Framed Glass Partitions', 'Single Glazed Glass Partitions'],
+                    image: 'images/slim_profile.png'
+                },
+                {
+                    title: 'Staircase & Balustrades',
+                    items: ['Functionality & Safety', 'Aesthetic Appeal & Architectural Style', 'Spatial Consideration & Design Integration'],
+                    image: 'images/staircase.png'
+                },
+                {
+                    title: 'Shower Enclosure',
+                    items: ['Frameless Shower Enclosures', 'Sliding Shower Doors', 'Corner Shower Enclosures'],
+                    image: 'images/shower.png'
+                },
+                {
+                    title: 'Table Tops',
+                    items: ['Patterned or Decorative Glass', 'Tinted or Colored Glass', 'Back-Painted Glass'],
+                    image: 'https://picsum.photos/seed/glasstop/800/600'
+                }
+            ],
+            mirror: [
+                {
+                    title: 'Frameless & Beveled Mirror',
+                    items: ['Sleek and Modern Aesthetic', 'Enhanced Depth and Dimension', 'Timeless Elegance'],
+                    image: 'https://picsum.photos/seed/mirror1/800/600'
+                },
+                {
+                    title: 'LED Light Mirror',
+                    items: ['Efficient Illumination', 'Modern Design and Energy Efficiency', 'Customizable Lighting Options'],
+                    image: 'https://picsum.photos/seed/mirror2/800/600'
+                },
+                {
+                    title: 'Framed Mirror',
+                    items: ['Style and Elegance', 'Enhanced Visual Impact', 'Functional Versatility'],
+                    image: 'https://picsum.photos/seed/mirror3/800/600'
+                },
+                {
+                    title: 'Designed Mirror',
+                    items: ['Aesthetic Appeal', 'Versatile Design', 'Reflective Functionality'],
+                    image: 'https://picsum.photos/seed/mirror4/800/600'
+                },
+                {
+                    title: 'Color Mirror',
+                    items: ['Mood Enhancement', 'Visual Impact and Decorative Element', 'Versatile Lighting Options'],
+                    image: 'https://picsum.photos/seed/mirror5/800/600'
+                },
+                {
+                    title: 'Antique Mirror',
+                    items: ['Different Pattern & Colors', 'Modern yet Vintage Shades'],
+                    image: 'https://picsum.photos/seed/mirror6/800/600'
+                }
+            ],
+            aluminium: [
+                {
+                    title: 'Aluminium Sliding Windows & Doors',
+                    items: ['Fixed Skylights', 'Ventilating Skylights', 'Dome Skylights'],
+                    image: 'https://picsum.photos/seed/alum1/800/600'
+                },
+                {
+                    title: 'Bi-Fold Doors',
+                    items: ['Enhanced Flexibility and Functionality', 'Space-Saving Design', 'Easy Accessibility'],
+                    image: 'https://picsum.photos/seed/alum2/800/600'
+                },
+                {
+                    title: 'Curtain Wall',
+                    items: ['Architectural Versatility', 'Customization and Design', 'Flexibility Enhanced Interior Comfort and Daylighting'],
+                    image: 'https://picsum.photos/seed/alum3/800/600'
+                },
+                {
+                    title: 'Telescopic Doors',
+                    items: ['Sleek Aesthetic and Modern Appeal', 'Space Optimization', 'Versatile Configurations'],
+                    image: 'https://picsum.photos/seed/alum4/800/600'
+                },
+                {
+                    title: 'Flynet Mesh',
+                    items: ['Insect Protection', 'Unobstructed Views and Natural Light', 'Child and Pet Safety'],
+                    image: 'https://picsum.photos/seed/alum5/800/600'
+                },
+                {
+                    title: 'Aluminium Office/Kitchen Cabinets',
+                    items: ['Architectural Statement', 'Functional Advantages', 'Enhanced Accessibility'],
+                    image: 'https://picsum.photos/seed/alum6/800/600'
+                }
+            ]
+        };
+
+        const features = [
+            "Expert Team",
+            "On-Time Delivery",
+            "FullTime Support",
+            "Affordable Prices",
+            "Quality Assurance",
+            "Post work Services"
+        ];
+
+        function Navbar() {
+            const [isOpen, setIsOpen] = useState(false);
+
+            const toggleMenu = () => setIsOpen(!isOpen);
+
+            return (
+                <nav className="navbar">
+                    <div className="container nav-container">
+                        <div className="logo">
+                            <i className="fa-solid fa-building text-gold"></i>
+                            <div className="logo-text">
+                                <span className="logo-title">Hasan Javed</span>
+                                <span className="logo-subtitle">Glass & Aluminium</span>
+                            </div>
+                        </div>
+                        <div className="menu-icon" onClick={toggleMenu}>
+                            <i className={isOpen ? "fa-solid fa-times" : "fa-solid fa-bars"}></i>
+                        </div>
+                        <ul className={isOpen ? "nav-links active" : "nav-links"}>
+                            <li><a href="#home" onClick={toggleMenu}>Home</a></li>
+                            <li><a href="#about" onClick={toggleMenu}>About</a></li>
+                            <li><a href="#services" onClick={toggleMenu}>Services</a></li>
+                            <li><a href="#why-us" onClick={toggleMenu}>Why Us</a></li>
+                            <li><a href="#contact" onClick={toggleMenu}>Contact</a></li>
+                        </ul>
+                    </div>
+                </nav>
+            );
+        }
+
+        function Hero() {
+            return (
+                <section id="home" className="hero">
+                    <div className="container hero-content animate-in">
+                        <span className="hero-subtitle">2024-2025 Company Profile</span>
+                        <h1 className="hero-title">Reflecting Quality, <br /><span className="text-gold">Shaping Durability.</span></h1>
+                        <p className="hero-description">We specialize in premium glass and aluminium installation and maintenance in Dubai, catering to the expanding renovation and construction sector.</p>
+                        <div>
+                            <a href="#services" className="btn btn-primary">Our Services</a>
+                            <a href="#contact" className="btn btn-outline">Contact Us</a>
+                        </div>
+                    </div>
+                </section>
+            );
+        }
+
+        function AboutSection() {
+            return (
+                <section id="about" className="about-section section-padding">
+                    <div className="container">
+                        <div className="about-grid">
+                            <div className="ceo-image-wrapper">
+                                <img src="ceo-profile.jpg" alt="CEO Profile" className="ceo-image" />
+                            </div>
+                            <div className="about-content">
+                                <h2>Get To Know Us</h2>
+                                <h3 className="text-gold" style={{ marginBottom: '1rem', fontFamily: 'var(--font-heading)' }}>Profile of CEO</h3>
+                                <p>With over 10 years in the Glass & Aluminium market, CEO Mr. Hasan Javed has become a trusted industry leader, known for innovative strategies and driving business growth.</p>
+
+                                <h3 className="text-gold" style={{ marginBottom: '1rem', marginTop: '2rem', fontFamily: 'var(--font-heading)' }}>About Our Company</h3>
+                                <p>Hasan Javed Glass & Aluminium Installation LLC Dubai, a premier provider of high-quality glass and aluminum solutions, is dedicated to transforming spaces with innovative design and exceptional craftsmanship.</p>
+                                <p>We prioritize high-quality standards in glass and mirror works, ensuring a perfect balance of beauty and reliability for our clients. Our core values revolve around innovation, quality and client satisfaction, delivering products that combine functionality, aesthetics, and durability.</p>
+                            </div>
+                        </div>
+
+                        <div className="vision-mission">
+                            <div className="vm-box">
+                                <h3><i className="fa-solid fa-eye"></i> Our Vision</h3>
+                                <p style={{ color: 'var(--text-muted)' }}>Our vision is to be the leading provider of innovative glass and aluminium solutions throughout the UAE, recognized for our excellence in quality, sustainability, and design.</p>
+                            </div>
+                            <div className="vm-box">
+                                <h3><i className="fa-solid fa-bullseye"></i> Our Mission</h3>
+                                <p style={{ color: 'var(--text-muted)' }}>Our mission is to deliver exceptional glass and aluminium solutions. We are dedicated to providing superior services through innovative design, precise engineering, and outstanding customer service. Our commitment is quality and sustainability.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            );
+        }
+
+        function ServicesSection() {
+            const [activeTab, setActiveTab] = useState('glass');
+
+            return (
+                <section id="services" className="services-section section-padding">
+                    <div className="container">
+                        <h2 className="section-title">Our <span className="text-gold">Services</span></h2>
+                        <p style={{ textAlign: 'center', color: 'var(--text-muted)', marginBottom: '3rem', maxWidth: '700px', margin: '0 auto 3rem' }}>Hasan Glass & Aluminium offers top-tier aluminum and glass services, combining quality craftsmanship with exceptional customer service to meet all your needs of Glass Installation, Aluminium work, and Mirror work.</p>
+
+                        <div className="service-tabs">
+                            <button className={`tab-btn ${activeTab === 'glass' ? 'active' : ''}`} onClick={() => setActiveTab('glass')}>Glass Services</button>
+                            <button className={`tab-btn ${activeTab === 'aluminium' ? 'active' : ''}`} onClick={() => setActiveTab('aluminium')}>Aluminium Services</button>
+                            <button className={`tab-btn ${activeTab === 'mirror' ? 'active' : ''}`} onClick={() => setActiveTab('mirror')}>Mirror Services</button>
+                        </div>
+
+                        <div className="services-grid">
+                            {servicesData[activeTab].map((service, index) => (
+                                <div className="service-card" key={index}>
+                                    <div className="service-img-wrapper">
+                                        <img src={service.image} alt={service.title} className="service-img" />
+                                    </div>
+                                    <div className="service-content">
+                                        <h3>{service.title}</h3>
+                                        <ul className="service-list">
+                                            {service.items.map((item, i) => (
+                                                <li key={i}>{item}</li>
+                                            ))}
+                                        </ul>
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                </section>
+            );
+        }
+
+        function WhyChooseUs() {
+            return (
+                <section id="why-us" className="why-section section-padding">
+                    <div className="container">
+                        <div className="why-grid">
+                            <div>
+                                <h2 className="section-title" style={{ textAlign: 'left' }}>Why <span className="text-gold">Choose Us?</span></h2>
+                                <p style={{ color: 'var(--text-muted)', fontSize: '1.2rem', marginBottom: '2rem' }}>Expertise, quality, reliability, and best pricing choose us for all your glass and aluminum needs.</p>
+                                <p style={{ color: 'var(--text-main)', fontSize: '1.05rem', marginBottom: '2rem' }}>Whether you're looking to enhance your home's aesthetics, improve energy efficiency, or add a touch of elegance to your commercial space, Hasan Glass & Aluminium is your trusted partner. Contact us today to learn more about our services and how we can bring your vision to life.</p>
+                            </div>
+                            <div className="why-features">
+                                {features.map((feature, i) => (
+                                    <div className="feature-box" key={i}>
+                                        <h4>{feature}</h4>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            );
+        }
+
+        function Footer() {
+            return (
+                <footer id="contact" className="footer">
+                    <div className="container">
+                        <div className="footer-grid">
+                            <div className="footer-col" style={{ flex: 2 }}>
+                                <div className="logo" style={{ marginBottom: '1.5rem', alignItems: 'center' }}>
+                                    <i className="fa-solid fa-building text-gold" style={{ fontSize: '2rem' }}></i>
+                                    <div className="logo-text">
+                                        <span className="logo-title" style={{ fontSize: '1.8rem' }}>Hasan Javed</span>
+                                        <span className="logo-subtitle" style={{ fontSize: '1rem' }}>Glass & Aluminium Installation LLC</span>
+                                    </div>
+                                </div>
+                                <p style={{ marginTop: '1rem' }}>Do you have questions or want to learn more? Reach out to us! Our friendly team is here to assist. Contact us via email, phone, or visit our website for further information and inquiries.</p>
+                            </div>
+                            <div className="footer-col">
+                                <h3>Contact Details</h3>
+                                <p><i className="fa-solid fa-phone text-gold"></i> <strong>Phone:</strong> +971 558 430 513</p>
+                                <p><i className="fa-solid fa-envelope text-gold"></i> <strong>Email:</strong> rajahasanarjan@gmail.com</p>
+                                <p><i className="fa-solid fa-location-dot text-gold"></i> <strong>P.O Box:</strong> Shop no 11, Fatma Mohamed Thani Building Naif, Dubai U.A.E</p>
+                                <p><i className="fa-solid fa-globe text-gold"></i> <strong>Web:</strong> hasanjavedglasssandminium.com</p>
+                            </div>
+                        </div>
+                        <div className="copyright">
+                            <p>We ARE PROUD TO OFFER: Expertise, Versatility, Customization, Quality Materials, Efficiency, Client Satisfaction.</p>
+                            <p style={{ marginTop: '1rem' }}>&copy; 2024-2025 Hasan Javed Glass & Aluminium Installation LLC. All Rights Reserved.</p>
+                        </div>
+                    </div>
+                </footer>
+            );
+        }
+
+        function App() {
+            return (
+                <div>
+                    <Navbar />
+                    <Hero />
+                    <AboutSection />
+                    <ServicesSection />
+                    <WhyChooseUs />
+                    <Footer />
+                </div>
+            );
+        }
+
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(<App />);
+    </script>
+</body>
+
+</html>

@@ -27,7 +27,18 @@
                 {
                     title: 'Office Glass Partitions',
                     items: ['Sliding Glass Partitions', 'Decorative Glass Partitions', 'Integrated Glass Partitions'],
-                    image: 'images/1000258127.jpg'
+                    image: [
+                        'images/1000258127.jpg',
+                        'images/1000258166.jpeg',
+                        'images/1000351224.jpg',
+                        'images/1000351230.jpg',
+                        'images/1000351239.jpg',
+                        'images/1000351324.jpg',
+                        'images/1000351445.jpg',
+                        'images/1000351449.jpg',
+                        'images/1000351894.jpg',
+                        'images/1000351904.jpg'
+                    ]
                 },
                 {
                     title: 'Smart Film Glass',
@@ -42,17 +53,35 @@
                 {
                     title: 'Staircase & Balustrades',
                     items: ['Functionality & Safety', 'Aesthetic Appeal & Architectural Style', 'Spatial Consideration & Design Integration'],
-                    image: 'images/1000258145.jpeg'
+                    image: [
+                        'images/1000351221.jpg',
+                        'images/1000351325.jpg',
+                        'images/1000351908.jpg',
+                        'images/staircase.png'
+                    ]
                 },
                 {
                     title: 'Shower Enclosure',
                     items: ['Frameless Shower Enclosures', 'Sliding Shower Doors', 'Corner Shower Enclosures'],
-                    image: 'images/1000258166.jpeg'
+                    image: [
+                        'images/1000351222.jpg',
+                        'images/1000351229.jpg',
+                        'images/1000351237.jpg',
+                        'images/1000351258.jpg',
+                        'images/1000351277.jpg',
+                        'images/1000351891.jpg',
+                        'images/shower.png'
+                    ]
                 },
                 {
                     title: 'Table Tops',
                     items: ['Patterned or Decorative Glass', 'Tinted or Colored Glass', 'Back-Painted Glass'],
                     image: 'images/table-top.jpg'
+                },
+                {
+                    title: 'Glass Shelving',
+                    items: ['Custom Glass Shelves', 'Bracketed & Floating Shelves', 'Tempered Safety Glass'],
+                    image: 'images/1000351530.jpg'
                 }
             ],
             mirror: [
@@ -74,7 +103,11 @@
                 {
                     title: 'Designed Mirror',
                     items: ['Aesthetic Appeal', 'Versatile Design', 'Reflective Functionality'],
-                    image: 'images/1000258172.jpeg'
+                    image: [
+                        'images/1000258145.jpeg',
+                        'images/Designed_Mirror.jpg',
+                        'images/1000351885.jpg'
+                    ]
                 },
                 {
                     title: 'Color Mirror',
@@ -90,8 +123,14 @@
             aluminium: [
                 {
                     title: 'Aluminium Sliding Windows & Doors',
-                    items: ['Fixed Skylights', 'Ventilating Skylights', 'Dome Skylights'],
-                    image: 'images/1000258136.jpeg'
+                    items: ['Sliding Windows', 'Sliding Doors', 'Flyscreen / Mesh Options'],
+                    image: [
+                        'images/1000258136.jpeg',
+                        'images/1000351218.jpg',
+                        'images/1000351631.jpg',
+                        'images/1000351892.jpg',
+                        'images/1000351893.jpg'
+                    ]
                 },
                 {
                     title: 'Bi-Fold Doors',
@@ -101,7 +140,12 @@
                 {
                     title: 'Curtain Wall',
                     items: ['Architectural Versatility', 'Customization and Design', 'Flexibility Enhanced Interior Comfort and Daylighting'],
-                    image: 'images/1000258160.jpeg'
+                    image: [
+                        'images/1000258160.jpeg',
+                        'images/1000351435.jpg',
+                        'images/1000351452.jpg',
+                        'images/1000351454.jpg'
+                    ]
                 },
                 {
                     title: 'Telescopic Doors',
@@ -117,23 +161,37 @@
                     title: 'Aluminium Office/Kitchen Cabinets',
                     items: ['Architectural Statement', 'Functional Advantages', 'Enhanced Accessibility'],
                     image: 'images/1000258178.jpeg'
+                },
+                {
+                    title: 'Aluminium Gates & Fencing',
+                    items: ['Custom Fabrication', 'Durable Powder-Coated Finish', 'Secure & Modern Designs'],
+                    image: [
+                        'images/1000351303.jpg',
+                        'images/1000258172.jpeg'
+                    ]
                 }
             ],
             joinery: [
                 {
                     title: 'Custom Wood Cabinets',
                     items: ['Modern Kitchen Cabinets', 'Premium Pantry Units', 'Durable Wood Finishes'],
-                    image: 'images/1000258118.jpg'
+                    image: [
+                        'images/1000258130.jpeg',
+                        'images/1000351887.jpg'
+                    ]
                 },
                 {
                     title: 'Fitted Wardrobes',
                     items: ['Sliding Door Wardrobes', 'Walk-in Closets', 'Space-Saving Designs'],
-                    image: 'images/1000258124.jpeg'
+                    image: [
+                        'images/1000258124.jpeg',
+                        'images/1000351240.jpg'
+                    ]
                 },
                 {
                     title: 'Wooden Doors & Frames',
                     items: ['Solid Wood Entrance Doors', 'Designer Internal Doors', 'Architectural Timber Frames'],
-                    image: 'images/1000258130.jpeg'
+                    image: 'images/1000351886.jpg'
                 },
                 {
                     title: 'Office Woodwork',
@@ -143,7 +201,13 @@
                 {
                     title: 'Timber Pergola & Decking',
                     items: ['Garden Pergolas', 'High-Quality Timber Decking', 'Outdoor Furniture'],
-                    image: 'images/1000258139.jpeg'
+                    image: [
+                        'images/1000258139.jpeg',
+                        'images/1000258118.jpg',
+                        'images/1000351437.jpg',
+                        'images/1000351443.jpg',
+                        'images/1000351636.jpg'
+                    ]
                 },
                 {
                     title: 'Wall Wood Panelling',
@@ -295,6 +359,52 @@
             );
         }
 
+        function ServiceCard({ service, index }) {
+            const images = Array.isArray(service.image) ? service.image : [service.image];
+            const [activeImageIdx, setActiveImageIdx] = useState(0);
+
+            return (
+                <div className="service-card reveal active" key={index} style={{ transitionDelay: `${(index % 3) * 0.15}s` }}>
+                    <div className="service-img-wrapper">
+                        <img src={images[activeImageIdx]} alt={service.title} className="service-img" />
+                        {images.length > 1 && (
+                            <div style={{ display: 'flex', gap: '0.5rem', padding: '0.75rem', flexWrap: 'wrap', justifyContent: 'center' }}>
+                                {images.map((src, i) => (
+                                    <button
+                                        key={src}
+                                        onClick={() => setActiveImageIdx(i)}
+                                        aria-label={`View ${service.title} image ${i + 1}`}
+                                        style={{
+                                            border: i === activeImageIdx ? '2px solid var(--gold)' : '1px solid rgba(255,255,255,0.15)',
+                                            background: 'rgba(255,255,255,0.04)',
+                                            padding: '0',
+                                            borderRadius: '10px',
+                                            overflow: 'hidden',
+                                            cursor: 'pointer'
+                                        }}
+                                    >
+                                        <img
+                                            src={src}
+                                            alt=""
+                                            style={{ width: '64px', height: '46px', objectFit: 'cover', display: 'block' }}
+                                        />
+                                    </button>
+                                ))}
+                            </div>
+                        )}
+                    </div>
+                    <div className="service-content">
+                        <h3>{service.title}</h3>
+                        <ul className="service-list">
+                            {service.items.map((item, i) => (
+                                <li key={i}>{item}</li>
+                            ))}
+                        </ul>
+                    </div>
+                </div>
+            );
+        }
+
         function ServicesSection() {
             const [activeTab, setActiveTab] = useState('glass');
 
@@ -314,19 +424,7 @@
 
                         <div className="services-grid" key={activeTab}>
                             {servicesData[activeTab].map((service, index) => (
-                                <div className="service-card reveal active" key={index} style={{ transitionDelay: `${(index % 3) * 0.15}s` }}>
-                                    <div className="service-img-wrapper">
-                                        <img src={service.image} alt={service.title} className="service-img" />
-                                    </div>
-                                    <div className="service-content">
-                                        <h3>{service.title}</h3>
-                                        <ul className="service-list">
-                                            {service.items.map((item, i) => (
-                                                <li key={i}>{item}</li>
-                                            ))}
-                                        </ul>
-                                    </div>
-                                </div>
+                                <ServiceCard service={service} index={index} key={index} />
                             ))}
                         </div>
                     </div>

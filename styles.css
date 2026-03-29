@@ -118,7 +118,10 @@ img {
 .reveal-left {
     opacity: 0;
     visibility: hidden;
-    transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+    transition-property: opacity, transform;
+    transition-duration: 0.8s;
+    transition-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
+    will-change: opacity, transform;
 }
 
 .reveal {
@@ -139,6 +142,22 @@ img {
     opacity: 1;
     transform: translate(0) scale(1);
     visibility: visible;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    #root,
+    .animate-in,
+    .reveal,
+    .reveal-scale,
+    .reveal-left,
+    .whatsapp-float {
+        animation: none !important;
+        transition: none !important;
+    }
 }
 
 .delay-1 {
